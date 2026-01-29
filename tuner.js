@@ -56,6 +56,7 @@ const noteEl = document.getElementById('detected-note');
 const freqEl = document.getElementById('detected-freq');
 const meterBar = document.getElementById('meter-bar');
 const centsEl = document.getElementById('cents');
+const directionEl = document.getElementById('direction');
 const startBtn = document.getElementById('start-btn');
 const statusEl = document.getElementById('status');
 const stringBtns = document.querySelectorAll('.string-btn');
@@ -129,6 +130,8 @@ function stopTuner() {
   meterBar.style.width = '0';
   meterBar.classList.remove('in-tune');
   centsEl.textContent = '0 cents';
+  directionEl.textContent = '';
+  directionEl.className = 'direction';
 }
 
 function updatePitch() {
@@ -159,6 +162,19 @@ function updatePitch() {
     }
 
     centsEl.textContent = (info.cents >= 0 ? '+' : '') + info.cents + ' cents';
+
+    // Show tuning direction instruction
+    directionEl.className = 'direction';
+    if (inTune) {
+      directionEl.textContent = 'In tune!';
+      directionEl.classList.add('in-tune');
+    } else if (info.cents > 0) {
+      directionEl.textContent = 'Too sharp — loosen the peg (turn away from you)';
+      directionEl.classList.add('sharp');
+    } else {
+      directionEl.textContent = 'Too flat — tighten the peg (turn toward you)';
+      directionEl.classList.add('flat');
+    }
 
     // Highlight matching string button
     stringBtns.forEach(b => {
