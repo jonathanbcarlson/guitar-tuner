@@ -102,6 +102,25 @@ h1 {
   color: #888;
 }
 
+.direction {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 1.5em;
+}
+
+.direction.sharp {
+  color: #e94560;
+}
+
+.direction.flat {
+  color: #4dabf7;
+}
+
+.direction.in-tune {
+  color: #0f0;
+}
+
 .strings {
   display: flex;
   justify-content: center;
