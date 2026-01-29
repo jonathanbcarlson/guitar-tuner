@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Guitar Tuner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Guitar Tuner</h1>
+    <div class="note-display">
+      <span class="detected-note" id="detected-note">-</span>
+      <span class="detected-freq" id="detected-freq">-- Hz</span>
+    </div>
+    <div class="meter-container">
+      <div class="meter-labels">
+        <span>♭</span>
+        <span>♯</span>
+      </div>
+      <div class="meter">
+        <div class="meter-bar" id="meter-bar"></div>
+        <div class="meter-center"></div>
+      </div>
+      <div class="cents" id="cents">0 cents</div>
+    </div>
+    <div class="strings">
+      <button class="string-btn" data-note="E2" data-freq="82.41">E2</button>
+      <button class="string-btn" data-note="A2" data-freq="110.00">A2</button>
+      <button class="string-btn" data-note="D3" data-freq="146.83">D3</button>
+      <button class="string-btn" data-note="G3" data-freq="196.00">G3</button>
+      <button class="string-btn" data-note="B3" data-freq="246.94">B3</button>
+      <button class="string-btn" data-note="E4" data-freq="329.63">E4</button>
+    </div>
+    <button class="start-btn" id="start-btn">Start Tuning</button>
+    <p class="status" id="status">Tap "Start Tuning" and play a string</p>
+  </div>
+  <script src="tuner.js"></script>
+</body>
+</html>
