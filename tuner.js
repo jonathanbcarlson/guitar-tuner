@@ -147,7 +147,7 @@ function updatePitch() {
     freqEl.textContent = freq.toFixed(1) + ' Hz';
 
     const absCents = Math.abs(info.cents);
-    const inTune = absCents <= 5;
+    const inTune = absCents <= 10;
     noteEl.classList.toggle('in-tune', inTune);
     meterBar.classList.toggle('in-tune', inTune);
 
